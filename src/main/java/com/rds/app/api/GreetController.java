@@ -23,4 +23,15 @@ public class GreetController
 
     }
 
+    @GetMapping("/health")
+    public Map<String, String> healthCheck()
+    {
+        return Map.of(
+            "status", "UP",
+            "timestamp", LocalDateTime.now().toString(),
+            "version", "1.0.0",
+            "author", "Ramanuj Das"
+        );
+    }
+
 }
