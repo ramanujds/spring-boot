@@ -1,6 +1,7 @@
 package com.rds.app.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
@@ -33,5 +34,16 @@ public class GreetController
             "author", "Ramanuj Das"
         );
     }
+
+    @GetMapping("/info")
+    public Map<String, String> info() {
+        return Map.of(
+                "application", "Spring Boot on AWS",
+                "version", "1.0.0",
+                "author", "Ramanuj Das",
+                "description", "A simple Spring Boot application deployed on AWS to demonstrate cloud deployment capabilities."
+        );
+    }
+
 
 }
