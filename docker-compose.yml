@@ -1,0 +1,13 @@
+services:
+  spring-boot-app:
+    image: ram1uj/spring-boot
+    container_name: spring-boot-app
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+    security_opt:
+      - seccomp:unconfined
+
+networks:
+  app-network:
