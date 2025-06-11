@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController
 public class GreetController
 {
-    @Value("${APP_MESSAGE:Hello from Spring Boot App}")
+    @Value("${APP_MESSAGE:Hello from Spring Boot App updated by Jenkins!}")
     private String message;
 
     @GetMapping
