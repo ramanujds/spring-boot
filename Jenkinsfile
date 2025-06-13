@@ -53,7 +53,7 @@ pipeline {
                     sh 'gcloud auth activate-service-account --key-file=$gcp_credentials'
                     sh 'gcloud config set project upgradlabs-1746877449603'
                     sh 'gcloud config set compute/zone asia-south1-a'
-                    sh 'gcloud container clusters get-credentials app-cluster --region asia-south1 --project upgradlabs-1746877449603h '
+                    sh 'gcloud container clusters get-credentials app-cluster --region asia-south1 --project upgradlabs-1746877449603'
 
                 }
             }
