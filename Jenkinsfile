@@ -48,12 +48,12 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                  sh 'gcloud container clusters get-credentials app-cluster --region asia-south1 --project upgradlabs-1746877449603h 'kubectl delete deployment spring-boot-app || true'
+                   sh 'gcloud container clusters get-credentials app-cluster --region asia-south1 --project upgradlabs-1746877449603h '
                    sh 'kubectl get svc'
-//                 sh 'kubectl delete deployment spring-boot-app || true'
-//                 sh 'kubectl apply -f deployment.yml'
+//                  sh 'kubectl delete deployment spring-boot-app || true'
+//                  sh 'kubectl apply -f deployment.yml'
 //                 sh 'kubectl apply -f service.yml'
-//                 sh 'kubectl rollout status deployment/spring-boot-app'
+//                  sh 'kubectl rollout status deployment/spring-boot-app'
             }
            }
 
