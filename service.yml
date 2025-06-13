@@ -8,7 +8,7 @@ metadata:
     io.kompose.service: spring-boot-app
   name: spring-boot-app
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - name: "5000"
       port: 5000
