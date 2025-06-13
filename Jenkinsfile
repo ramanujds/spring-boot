@@ -49,8 +49,8 @@ pipeline {
 
         stage('Login to GCP') {
             steps {
-                withCredentials([file(credentialsId: 'gcp-credentials', variable: 'gcp-credentials')]) {
-                    sh 'gcloud auth activate-service-account --key-file=$gcp-credentials'
+                withCredentials([file(credentialsId: 'gcp_credentials', variable: 'gcp_credentials')]) {
+                    sh 'gcloud auth activate-service-account --key-file=$gcp_credentials'
                     sh 'gcloud config set project upgradlabs-1746877449603'
                     sh 'gcloud config set compute/zone asia-south1-a'
                     sh 'gcloud container clusters get-credentials app-cluster --region asia-south1 --project upgradlabs-1746877449603h '
