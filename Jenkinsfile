@@ -46,9 +46,21 @@ pipeline {
                 }
             }
         }
+
+        stage('Login to GCP') {
+            steps {
+                withCredentials([file(credentialsId: 'gcp-credentials', variable: 'gcp-credentials')]) {
+                    sh 'gcloud auth activate-service-account --key-file=$gcp-credentials'
+                    sh 'gcloud config set project upgradlabs-1746877449603'
+                    sh 'gcloud config set compute/zone asia-south1-a'
+                    sh 'gcloud container clusters get-credentials app-cluster --region asia-south1 --project upgradlabs-1746877449603h '
+
+                }
+            }
+        }
+
         stage('Deploy to Kubernetes') {
             steps {
-                   sh 'gcloud container clusters get-credentials app-cluster --region asia-south1 --project upgradlabs-1746877449603h '
                    sh 'kubectl get svc'
 //                  sh 'kubectl delete deployment spring-boot-app || true'
 //                  sh 'kubectl apply -f deployment.yml'
