@@ -64,7 +64,7 @@ pipeline {
                    sh 'kubectl get svc'
                   sh 'kubectl delete deployment spring-boot-app || true'
                   sh 'kubectl apply -f deployment.yml'
-                sh 'kubectl apply -f service.yml'
+                  sh 'kubectl apply -f service.yml'
                   sh 'kubectl rollout status deployment/spring-boot-app'
             }
            }
