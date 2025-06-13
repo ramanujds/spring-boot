@@ -49,7 +49,7 @@ pipeline {
 
         stage('Login to GCP') {
             steps {
-                withCredentials([file(credentialsId: 'gcp_credentials', variable: 'gcp_credentials')]) {
+                withCredentials([file(credentialsId: 'gcp_credentials', variable: 'gcp_credentials')]){
                     sh 'gcloud auth activate-service-account --key-file=$gcp_credentials'
                     sh 'gcloud config set project upgradlabs-1746877449603'
                     sh 'gcloud config set compute/zone asia-south1-a'
@@ -62,10 +62,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                    sh 'kubectl get svc'
-//                  sh 'kubectl delete deployment spring-boot-app || true'
-//                  sh 'kubectl apply -f deployment.yml'
-//                 sh 'kubectl apply -f service.yml'
-//                  sh 'kubectl rollout status deployment/spring-boot-app'
+                  sh 'kubectl delete deployment spring-boot-app || true'
+                  sh 'kubectl apply -f deployment.yml'
+                sh 'kubectl apply -f service.yml'
+                  sh 'kubectl rollout status deployment/spring-boot-app'
             }
            }
 
