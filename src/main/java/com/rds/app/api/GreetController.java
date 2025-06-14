@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController
 public class GreetController
 {
-    @Value("${APP_MESSAGE:Ee Bhai! Tumne toh kamaal kar diya!}")
+    @Value("${APP_MESSAGE: Maza aa gya!}")
     private String message;
 
     @GetMapping
