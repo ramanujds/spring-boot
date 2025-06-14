@@ -59,10 +59,10 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                  sh 'kubectl delete deployment spring-boot-app || true'
+
                   sh 'kubectl apply -f deployment.yml'
                   sh 'kubectl apply -f service.yml'
-                  sh 'kubectl rollout status deployment/spring-boot-app'
+                  sh 'kubectl rollout restart deployment/spring-boot-app'
             }
            }
 
