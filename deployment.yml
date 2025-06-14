@@ -21,7 +21,7 @@ spec:
         io.kompose.service: spring-boot-app
     spec:
       containers:
-        - image: ram1uj/spring-boot
+        - image: ram1uj/spring-boot:latest
           name: spring-boot-app
           imagePullPolicy: Always
           ports:
