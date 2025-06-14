@@ -23,6 +23,7 @@ spec:
       containers:
         - image: ram1uj/spring-boot
           name: spring-boot-app
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
               protocol: TCP
